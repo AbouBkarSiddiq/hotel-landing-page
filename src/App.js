@@ -1,11 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch, Route
+} from 'react-router-dom'
+import Navigation from './Navigation';
+import Home from './Pages/Home';
+import Amenities from './Pages/Amenities';
+import ContactUs from './Pages/ContactUs';
 
 function App() {
   return (
-    <div className="App">
-      <h2>Hotel-App landing Page</h2>
-    </div>
+    <Router >
+      <div>
+        <Navigation/>
+      </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/Amenities">
+          <Amenities />
+        </Route>
+        <Route path="/ContactUs">
+          <ContactUs />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
